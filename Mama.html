@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre para Mamá</title>
+  <!-- Fuente manuscrita -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #ffe4e1;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .sobre {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background: #fff2f2;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+
+    .tapa {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f8b4b4;
+      clip-path: polygon(0 0, 50% 50%, 100% 0);
+      z-index: 3;
+      transition: transform 1s ease;
+      transform-origin: top;
+    }
+
+    .sello {
+      position: absolute;
+      top: 60px;
+      left: calc(50% - 25px);
+      width: 50px;
+      height: 50px;
+      background: #e91e63;
+      border-radius: 50%;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .carta {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      padding: 20px;
+      padding-bottom: 40px; /* Espacio para la firma */
+      box-sizing: border-box;
+      z-index: 2;
+      transition: top 1s ease;
+      overflow-y: auto;
+    }
+
+    .mensaje {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .firma {
+      display: block;
+      margin-top: 15px;
+      font-style: italic;
+      font-weight: bold;
+      color: #e91e63;
+      font-family: 'Pacifico', cursive;
+      font-size: 18px;
+    }
+
+    .sobre.abierto .tapa {
+      transform: rotateX(180deg);
+    }
+
+    .sobre.abierto .sello {
+      transform: scale(1.5) rotate(30deg);
+      opacity: 0;
+    }
+
+    .sobre.abierto .carta {
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sobre" onclick="abrirCerrarSobre(this)">
+  <div class="tapa"></div>
+  <div class="sello">💖</div>
+  <div class="carta">
+    <div class="mensaje">
+      Querida mamá,<br><br>
+      Gracias por cada abrazo, cada consejo y cada sonrisa. <br>
+      Eres mi inspiración y mi fuerza. <br><br>
+      ¡Feliz Día de la Madre! 🌷<br><br>
+      Con amor,
+      <span class="firma">Arsenio Duarte</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function abrirCerrarSobre(sobre) {
+    sobre.classList.toggle("abierto");
+  }
+</script>
+
+</body>
+</html>
 
